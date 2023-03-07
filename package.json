@@ -1,8 +1,8 @@
 {
-  "name": "aptuslib",
-  "version": "1.0.0",
-  "description": "API lib to remote list and open doors using Aptus Styra.",
-  "main": "apiserver.js",
+  "name": "aaiisentiment",
+  "version": "0.0.1",
+  "description": "Download sentiment data from AAII",
+  "main": "console.js",
   "author": "Simon Fredriksson <simon@lan2k.org>",
   "type": "module",
   "dependencies": {
@@ -10,7 +10,7 @@
     "puppeteer": "^13.5.2"
   },
   "scripts": {
-    "start": "node apiserver.js",
+    "start": "node console.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "GPL"

@@ -12,6 +12,6 @@ RUN apk add --no-cache ca-certificates git chromium nss freetype harfbuzz ttf-fr
     && chmod +x /app/init.sh
 COPY . .
 USER pptruser
-EXPOSE 3001/tcp
+# EXPOSE 3001/tcp
 ENV DISPLAY :99
 CMD /app/init.sh

@@ -3,13 +3,9 @@ services:
   aaiisentiment:
     build:
       context: "."
-      network: br
+      network: lan
     container_name: aaiisentiment
     domainname: example.tld
-    environment:
-      - PORT=3001
-    expose:
-      - 3001/tcp
     hostname: aaiisentiment
     image: simfre/aaiisentiment
     networks:

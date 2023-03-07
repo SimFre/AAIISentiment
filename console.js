@@ -1,16 +1,19 @@
 
-import express from "express";
 import aaiilib from "./aaiilib.js";
 
-const listenport = process.env.PORT ?? 3001;
 const chromePath = process.env.CHROME_PATH;
-// const baseurl = process.env.APTUS_BASEURL ?? "";
-const baseurl = "https://www.aaii.com/";
+//const chromePath = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
+const baseurl = "https://www.aaii.com/sentimentsurvey/sent_results";
 
 const aaii = new aaiilib(baseurl);
 aaii.chromePath = chromePath;
-aaii.headless = false;
+aaii.headless = true;
 
-aaii.getData();
+await aaii.initialize();
+const d = await aaii.getTableData();
 aaii.close();
 
+if (d) {
+    const j = JSON.stringify(d, null, 2);
+    console.log(j);
+}
